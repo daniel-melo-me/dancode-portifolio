@@ -1,392 +1,256 @@
-// script.js
-// Frontend simples em 1 arquivo JS
-// Organização lógica estilo MVC (sem pastas)
-// Idioma: Português | Padrão: camelCase
+// script.js — Dancode Solutions
 
-// =======================
-// Modelo
-// =======================
-
-const portifolioModelo = {
-  marca: {
-    nome: "Dancode Solutions",
-    tagline: "Operações confiáveis. Sistemas governáveis.",
-  },
-
-  identidade: {
-    titulo: "Transformamos operações caóticas em sistemas confiáveis.",
-    descricao:
-      "Construímos soluções de software que reduzem retrabalho, aumentam previsibilidade e organizam decisões operacionais — sem virar commodity.",
-    pontos: [
-      "Tese clara: resolvemos problemas operacionais reais, não tarefas soltas.",
-      "Foco em confiabilidade: dados governados, regras explícitas e rastreabilidade.",
-      "Crescimento com margem: profundidade antes de volume indiscriminado.",
-    ],
-  },
-
-  blocosInicio: [
-    {
-      titulo: "O que fazemos",
-      texto:
-        "Desenhamos e implementamos soluções digitais que organizam processos recorrentes e dão visibilidade confiável para decisões operacionais.",
-    },
-    {
-      titulo: "Como geramos valor",
-      texto:
-        "Substituímos improviso por processo, planilha por dado governado e esforço repetitivo por automação, mantendo o software sustentável.",
-    },
-  ],
-
+// ─── Dados ────────────────────────────────────────
+const dados = {
   solucoes: [
     {
-      rotulo: "Soluções operacionais",
-      titulo: "Sistemas de organização operacional",
+      cor: 'corAzul',
+      icone: 'fa-solid fa-sitemap',
+      rotulo: 'Sistemas',
+      titulo: 'Organização operacional',
       descricao:
-        "Soluções enxutas e opinativas para estruturar rotinas críticas e consolidar dados que hoje vivem em planilhas e e-mails.",
+        'Soluções enxutas para estruturar rotinas críticas e consolidar dados que hoje vivem em planilhas e e-mails.',
       entregas: [
-        "Centralização de informações críticas",
-        "Regras e aprovações explícitas",
-        "Histórico e rastreabilidade",
+        'Centralização de dados críticos',
+        'Regras e aprovações explícitas',
+        'Histórico e rastreabilidade',
       ],
     },
     {
-      rotulo: "Automação",
-      titulo: "Automação de processos",
+      cor: 'corCiano',
+      icone: 'fa-solid fa-bolt',
+      rotulo: 'Automação',
+      titulo: 'Automação de processos',
       descricao:
-        "Eliminação de tarefas repetitivas e criação de fluxos confiáveis para reduzir erro humano.",
+        'Eliminação de tarefas repetitivas e criação de fluxos confiáveis para reduzir erro humano e retrabalho.',
       entregas: [
-        "Fluxos automatizados",
-        "Alertas e validações",
-        "Integrações entre sistemas",
+        'Fluxos automatizados end-to-end',
+        'Alertas e validações inteligentes',
+        'Integrações entre sistemas',
       ],
     },
     {
-      rotulo: "Produtos",
-      titulo: "SaaS e soluções licenciáveis",
+      cor: 'corVerde',
+      icone: 'fa-solid fa-cubes',
+      rotulo: 'SaaS',
+      titulo: 'Produtos licenciáveis',
       descricao:
-        "Soluções recorrentes com visão de produto, escalabilidade e governança.",
+        'Soluções com visão de produto, escalabilidade e governança para modelos de receita recorrente.',
       entregas: [
-        "Arquitetura escalável",
-        "Parametrização como regra",
-        "Modelo recorrente",
+        'Arquitetura escalável',
+        'Parametrização como regra',
+        'Modelo de receita recorrente',
       ],
     },
     {
-      rotulo: "Entrega rápida",
-      titulo: "Landing pages estratégicas",
+      cor: 'corVioleta',
+      icone: 'fa-solid fa-rocket',
+      rotulo: 'Entrega rápida',
+      titulo: 'Landing pages estratégicas',
       descricao:
-        "Presença digital moderna para validação comercial e campanhas pontuais.",
+        'Presença digital moderna para validação comercial, campanhas e lançamentos de produto.',
       entregas: [
-        "Design moderno",
-        "Alta performance",
-        "Entrega rápida",
+        'Design moderno e responsivo',
+        'Alta performance (Core Web Vitals)',
+        'Entrega ágil',
       ],
     },
   ],
 
-  comoTrabalhamos: {
-    titulo: "Como trabalhamos",
-    descricao:
-      "Clareza, disciplina e foco no problema antes da tecnologia.",
-    pontos: [
-      "Começamos pelo problema, não pela stack",
-      "Fronteiras claras de escopo",
-      "Soluções simples e sustentáveis",
-      "Qualidade antes de velocidade",
-    ],
-  },
+  processo: [
+    {
+      numero: '01',
+      icone: 'fa-solid fa-magnifying-glass',
+      titulo: 'Entender o problema',
+      texto:
+        'Começamos pelo problema, não pela stack. Diagnóstico claro antes de qualquer linha de código.',
+    },
+    {
+      numero: '02',
+      icone: 'fa-solid fa-map',
+      titulo: 'Definir o escopo',
+      texto:
+        'Fronteiras claras: o que entra, o que não entra, e por quê. Sem surpresas no meio do caminho.',
+    },
+    {
+      numero: '03',
+      icone: 'fa-solid fa-code',
+      titulo: 'Construir simples',
+      texto:
+        'Soluções sustentáveis antes de sofisticadas. Qualidade antes de velocidade.',
+    },
+    {
+      numero: '04',
+      icone: 'fa-solid fa-check-double',
+      titulo: 'Entregar valor',
+      texto:
+        'Software que funciona no dia a dia, não só na demo. Confiabilidade como requisito.',
+    },
+  ],
 
-  paraQuemNaoE: {
-    titulo: "Para quem não é",
-    descricao:
-      "Nem toda empresa é nosso cliente — e isso é intencional.",
-    pontos: [
-      "Quem busca software barato",
-      "Demandas sem dono",
-      "Projetos puramente estéticos",
-      "Customização infinita",
-    ],
-  },
-
-  contato: {
-    titulo: "Contato",
-    descricao:
-      "Se sua empresa cresceu mais rápido do que sua organização interna, podemos ajudar a transformar caos em confiabilidade.",
-    canais: [
-      {
-        rotulo: "E-mail",
-        valor: "dancodesolutions@gmail.com",
-        icone: "fa-solid fa-envelope",
-        link: "mailto:dancodesolutions@gmail.com",
-      },
-      {
-        rotulo: "WhatsApp",
-        valor: "+55 51 99795-5292",
-        icone: "fa-brands fa-whatsapp",
-        link: "https://wa.me/5551997955292",
-      },
-      {
-        rotulo: "LinkedIn",
-        valor: "linkedin.com/in/daniel--melo",
-        icone: "fa-brands fa-linkedin",
-        link: "https://www.linkedin.com/in/daniel--melo/",
-      },
-    ],
-    aviso: "Os links abrem em nova aba (exceto e-mail).",
-  },
+  contato: [
+    {
+      classe: 'contatoEmail',
+      icone: 'fa-solid fa-envelope',
+      rotulo: 'E-mail',
+      valor: 'dancodesolutions@gmail.com',
+      link: 'mailto:dancodesolutions@gmail.com',
+    },
+    {
+      classe: 'contatoWhatsapp',
+      icone: 'fa-brands fa-whatsapp',
+      rotulo: 'WhatsApp',
+      valor: '+55 51 99795-5292',
+      link: 'https://wa.me/5551997955292',
+    },
+    {
+      classe: 'contatoLinkedin',
+      icone: 'fa-brands fa-linkedin',
+      rotulo: 'LinkedIn',
+      valor: 'linkedin.com/in/daniel--melo',
+      link: 'https://www.linkedin.com/in/daniel--melo/',
+    },
+  ],
 };
 
-// =======================
-// Utilitários
-// =======================
+// ─── Renderização ─────────────────────────────────
+function renderizarServicos() {
+  const grade = document.getElementById('gradeServicos');
+  if (!grade) return;
 
-function criarElemento(tag, opcoes = {}) {
-  const elemento = document.createElement(tag);
+  for (const s of dados.solucoes) {
+    const card = document.createElement('div');
+    card.className = `cardServico ${s.cor} revelar`;
+    card.innerHTML = `
+      <div class="cardServicoIcone"><i class="${s.icone}"></i></div>
+      <div class="cardServicoRotulo">${s.rotulo}</div>
+      <h3 class="cardServicoTitulo">${s.titulo}</h3>
+      <p class="cardServicoDescricao">${s.descricao}</p>
+      <ul class="cardServicoLista">
+        ${s.entregas.map(e => `<li>${e}</li>`).join('')}
+      </ul>
+    `;
+    grade.appendChild(card);
+  }
+}
 
-  if (opcoes.classes) elemento.className = opcoes.classes;
-  if (opcoes.texto !== undefined) elemento.textContent = opcoes.texto;
-  if (opcoes.html !== undefined) elemento.innerHTML = opcoes.html;
+function renderizarProcesso() {
+  const grade = document.getElementById('gradeProcesso');
+  if (!grade) return;
 
-  if (opcoes.atributos) {
-    for (const [chave, valor] of Object.entries(opcoes.atributos)) {
-      elemento.setAttribute(chave, valor);
+  for (const p of dados.processo) {
+    const card = document.createElement('div');
+    card.className = 'cardPasso revelar';
+    card.innerHTML = `
+      <div class="passoNumero">${p.numero}</div>
+      <div class="passoIcone"><i class="${p.icone}"></i></div>
+      <h3 class="passoTitulo">${p.titulo}</h3>
+      <p class="passoTexto">${p.texto}</p>
+    `;
+    grade.appendChild(card);
+  }
+}
+
+function renderizarContato() {
+  const lista = document.getElementById('contatoCanais');
+  if (!lista) return;
+
+  for (const c of dados.contato) {
+    const a = document.createElement('a');
+    a.href = c.link;
+    a.className = `cardContato ${c.classe} revelar`;
+    if (!c.link.startsWith('mailto')) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
     }
+    a.innerHTML = `
+      <div class="cardContatoIcone"><i class="${c.icone}"></i></div>
+      <div class="cardContatoInfo">
+        <span class="cardContatoRotulo">${c.rotulo}</span>
+        <span class="cardContatoValor">${c.valor}</span>
+      </div>
+      <i class="fa-solid fa-arrow-right cardContatoSeta"></i>
+    `;
+    lista.appendChild(a);
+  }
+}
+
+function configurarRodape() {
+  const el = document.getElementById('rodapeAno');
+  if (el) el.textContent = `© ${new Date().getFullYear()} Dancode Solutions LTDA.`;
+}
+
+// ─── Scroll & Nav ─────────────────────────────────
+function configurarNavScroll() {
+  const cabecalho = document.getElementById('cabecalho');
+  const secoes = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.linkNav');
+
+  function atualizarNav() {
+    cabecalho.classList.toggle('scrollado', window.scrollY > 20);
+
+    let secaoAtual = '';
+    secoes.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 130) secaoAtual = s.id;
+    });
+
+    links.forEach(l => {
+      const alvo = l.getAttribute('href').replace('#', '');
+      l.classList.toggle('ativo', alvo === secaoAtual);
+    });
   }
 
-  return elemento;
+  window.addEventListener('scroll', atualizarNav, { passive: true });
+  atualizarNav();
 }
 
-function limparElemento(elemento) {
-  while (elemento.firstChild) elemento.removeChild(elemento.firstChild);
-}
+function configurarMenuMobile() {
+  const botao = document.getElementById('menuBotao');
+  const nav = document.getElementById('navegacao');
+  if (!botao || !nav) return;
 
-// =======================
-// Visão
-// =======================
+  botao.addEventListener('click', () => {
+    const aberto = nav.classList.toggle('aberto');
+    botao.setAttribute('aria-expanded', String(aberto));
+  });
 
-const portifolioVisao = {
-  elementoConteudo: null,
-
-  iniciar() {
-    this.elementoConteudo = document.getElementById("conteudo");
-  },
-
-  renderizarPagina(rota) {
-    limparElemento(this.elementoConteudo);
-
-    if (rota === "inicio") this.renderizarInicio();
-    else if (rota === "solucoes") this.renderizarSolucoes();
-    else if (rota === "comoTrabalhamos")
-      this.renderizarLista(portifolioModelo.comoTrabalhamos);
-    else if (rota === "paraQuemNaoE")
-      this.renderizarLista(portifolioModelo.paraQuemNaoE);
-    else if (rota === "contato") this.renderizarContato();
-    else this.renderizarInicio();
-  },
-
-  renderizarInicio() {
-    const secao = criarElemento("section", { classes: "cartao heroi" });
-
-    secao.appendChild(
-      criarElemento("h1", {
-        classes: "tituloGrande",
-        html: portifolioModelo.identidade.titulo.replace(
-          "sistemas confiáveis",
-          `<span class="destaque">sistemas confiáveis</span>`
-        ),
-      })
-    );
-
-    secao.appendChild(
-      criarElemento("p", {
-        classes: "subtitulo",
-        texto: portifolioModelo.identidade.descricao,
-      })
-    );
-
-    const lista = criarElemento("ul", { classes: "listaPontos" });
-    for (const ponto of portifolioModelo.identidade.pontos) {
-      const item = criarElemento("li", { classes: "itemPonto" });
-      item.appendChild(criarElemento("span", { classes: "marcador" }));
-      item.appendChild(criarElemento("span", { texto: ponto }));
-      lista.appendChild(item);
-    }
-
-    secao.appendChild(lista);
-    this.elementoConteudo.appendChild(secao);
-  },
-
-  renderizarSolucoes() {
-    const secao = criarElemento("section", { classes: "cartao secao" });
-
-    secao.appendChild(
-      criarElemento("h1", { classes: "tituloGrande", texto: "Soluções" })
-    );
-
-    const grade = criarElemento("div", { classes: "gradeCartoes" });
-
-    for (const solucao of portifolioModelo.solucoes) {
-      const card = criarElemento("div", { classes: "cartao cartaoSolucao" });
-
-      card.appendChild(
-        criarElemento("div", { classes: "rotulo", texto: solucao.rotulo })
-      );
-      card.appendChild(
-        criarElemento("h2", { classes: "tituloCartao", texto: solucao.titulo })
-      );
-      card.appendChild(
-        criarElemento("p", { classes: "descricao", texto: solucao.descricao })
-      );
-
-      const lista = criarElemento("ul", { classes: "lista" });
-      for (const entrega of solucao.entregas) {
-        lista.appendChild(criarElemento("li", { texto: entrega }));
-      }
-
-      card.appendChild(lista);
-      grade.appendChild(card);
-    }
-
-    secao.appendChild(grade);
-    this.elementoConteudo.appendChild(secao);
-  },
-
-  renderizarLista(bloco) {
-    const secao = criarElemento("section", { classes: "cartao secao" });
-
-    secao.appendChild(
-      criarElemento("h1", { classes: "tituloGrande", texto: bloco.titulo })
-    );
-    secao.appendChild(
-      criarElemento("p", { classes: "subtitulo", texto: bloco.descricao })
-    );
-
-    const lista = criarElemento("ul", { classes: "listaPontos" });
-    for (const ponto of bloco.pontos) {
-      const item = criarElemento("li", { classes: "itemPonto" });
-      item.appendChild(criarElemento("span", { classes: "marcador" }));
-      item.appendChild(criarElemento("span", { texto: ponto }));
-      lista.appendChild(item);
-    }
-
-    secao.appendChild(lista);
-    this.elementoConteudo.appendChild(secao);
-  },
-
-  renderizarContato() {
-    const secao = criarElemento("section", { classes: "cartao secao" });
-
-    secao.appendChild(
-      criarElemento("h1", {
-        classes: "tituloGrande",
-        texto: portifolioModelo.contato.titulo,
-      })
-    );
-
-    secao.appendChild(
-      criarElemento("p", {
-        classes: "subtitulo",
-        texto: portifolioModelo.contato.descricao,
-      })
-    );
-
-    const lista = criarElemento("ul", { classes: "listaPontos" });
-
-    for (const canal of portifolioModelo.contato.canais) {
-      const item = criarElemento("li", { classes: "itemPonto" });
-
-      const link = criarElemento("a", {
-        classes: "linkContato",
-        atributos: {
-          href: canal.link,
-          target: canal.link.startsWith("mailto") ? "_self" : "_blank",
-          rel: "noopener noreferrer",
-        },
-      });
-
-      const icone = criarElemento("span", { classes: "iconeContato" });
-      icone.appendChild(criarElemento("i", { classes: canal.icone }));
-
-      const texto = criarElemento("span", {
-        classes: "textoContato",
-        texto: `${canal.rotulo}: ${canal.valor}`,
-      });
-
-      link.appendChild(icone);
-      link.appendChild(texto);
-
-      item.appendChild(criarElemento("span", { classes: "marcador" }));
-      item.appendChild(link);
-
-      lista.appendChild(item);
-    }
-
-    secao.appendChild(lista);
-    secao.appendChild(
-      criarElemento("div", {
-        classes: "aviso",
-        texto: portifolioModelo.contato.aviso,
-      })
-    );
-
-    this.elementoConteudo.appendChild(secao);
-  },
-};
-
-// =======================
-// Controlador
-// =======================
-
-const portifolioControlador = {
-  rotasValidas: [
-    "inicio",
-    "solucoes",
-    "comoTrabalhamos",
-    "paraQuemNaoE",
-    "contato",
-  ],
-
-  iniciar() {
-    portifolioVisao.iniciar();
-    this.configurarRodape();
-    this.configurarRotas();
-    this.atualizar();
-  },
-
-  configurarRodape() {
-    const ano = new Date().getFullYear();
-    const rodape = document.getElementById("textoRodape");
-    if (rodape) {
-      rodape.textContent = `© ${ano} ${portifolioModelo.marca.nome}.`;
-    }
-  },
-
-  configurarRotas() {
-    window.addEventListener("hashchange", () => this.atualizar());
-    if (!window.location.hash) window.location.hash = "#inicio";
-  },
-
-  atualizar() {
-    const rota = this.obterRotaAtual();
-    this.destacarMenu(rota);
-    portifolioVisao.renderizarPagina(rota);
-  },
-
-  obterRotaAtual() {
-    const rota = window.location.hash.replace("#", "");
-    return this.rotasValidas.includes(rota) ? rota : "inicio";
-  },
-
-  destacarMenu(rotaAtiva) {
-    const links = document.querySelectorAll(".linkNavegacao");
-    links.forEach((link) => {
-      link.classList.toggle(
-        "ativo",
-        link.dataset.rota === rotaAtiva
-      );
+  nav.querySelectorAll('.linkNav').forEach(l => {
+    l.addEventListener('click', () => {
+      nav.classList.remove('aberto');
+      botao.setAttribute('aria-expanded', 'false');
     });
-  },
-};
+  });
+}
 
-// Inicialização
-portifolioControlador.iniciar();
+// ─── Scroll Reveal ────────────────────────────────
+function configurarRevelacao() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const parent = entry.target.parentElement;
+        const irmaos = [...parent.querySelectorAll('.revelar:not(.visivel)')];
+        const idx = irmaos.indexOf(entry.target);
+        const atraso = Math.min(idx * 90, 360);
+
+        setTimeout(() => entry.target.classList.add('visivel'), atraso);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -48px 0px' }
+  );
+
+  document.querySelectorAll('.revelar').forEach(el => observer.observe(el));
+}
+
+// ─── Init ──────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarServicos();
+  renderizarProcesso();
+  renderizarContato();
+  configurarRodape();
+  configurarNavScroll();
+  configurarMenuMobile();
+  configurarRevelacao();
+});

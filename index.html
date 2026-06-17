@@ -1,54 +1,155 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dancode Solutions | Portfólio</title>
-    <meta name="description" content="Dancode Solutions - Transformamos operações caóticas em sistemas confiáveis." />
-    <link rel="stylesheet" href="./style.css" />
-
-    <!-- Ícones (Font Awesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        referrerpolicy="no-referrer" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dancode Solutions | Portfólio</title>
+  <meta name="description" content="Dancode Solutions LTDA — Transformamos operações caóticas em sistemas confiáveis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="container cabecalhoConteudo">
-            <a class="marca" href="#inicio" aria-label="Ir para início">
-                <img class="marcaLogo" src="./logo-dancode.png" alt="Logo Dancode Solutions" />
-                <div class="marcaTitulo">
-                    <div class="nome">Dancode Solutions</div>
-                    <div class="tagline">Operações confiáveis. Sistemas governáveis.</div>
-                </div>
+  <div class="fundoOrbs" aria-hidden="true">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalhoConteudo">
+      <a class="marca" href="#inicio" aria-label="Dancode Solutions — ir ao início">
+        <img class="marcaLogo" src="./logo-dancode.png" alt="Logo Dancode Solutions" />
+        <div class="marcaTitulo">
+          <span class="marcaNome">Dancode Solutions</span>
+          <span class="marcaTagline">Operações confiáveis. Sistemas governáveis.</span>
+        </div>
+      </a>
+
+      <button class="menuBotao" id="menuBotao" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+        <a class="linkNav" href="#inicio">Início</a>
+        <a class="linkNav" href="#solucoes">Soluções</a>
+        <a class="linkNav" href="#como-trabalhamos">Como trabalhamos</a>
+        <a class="linkNav" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="heroi" id="inicio">
+      <div class="container heroiConteudo">
+        <div class="heroiTexto">
+          <div class="chip fadeUp atraso1">
+            <i class="fa-solid fa-code"></i> Software para empresas sérias
+          </div>
+          <h1 class="heroiTitulo fadeUp atraso2">
+            Transformamos operações caóticas em
+            <span class="gradiente">sistemas confiáveis</span>
+          </h1>
+          <p class="heroiDescricao fadeUp atraso3">
+            Construímos soluções de software que reduzem retrabalho, aumentam previsibilidade e organizam decisões operacionais — sem virar commodity.
+          </p>
+          <div class="heroBotoes fadeUp atraso4">
+            <a href="#contato" class="botaoPrimario">
+              <i class="fa-solid fa-arrow-right"></i> Falar com a gente
             </a>
-
-            <nav class="navegacao" aria-label="Navegação principal" id="menuNavegacao">
-                <a class="linkNavegacao" href="#inicio" data-rota="inicio">Início</a>
-                <a class="linkNavegacao" href="#solucoes" data-rota="solucoes">Soluções</a>
-                <a class="linkNavegacao" href="#comoTrabalhamos" data-rota="comoTrabalhamos">Como trabalhamos</a>
-                <!-- <a class="linkNavegacao" href="#paraQuemNaoE" data-rota="paraQuemNaoE">Para quem não é</a> -->
-                <a class="linkNavegacao" href="#contato" data-rota="contato">Contato</a>
-            </nav>
+            <a href="#solucoes" class="botaoSecundario">
+              Ver soluções
+            </a>
+          </div>
         </div>
-    </header>
 
-    <main class="principal">
-        <div class="container">
-            <div id="conteudo"></div>
+        <div class="heroiStats fadeUp atraso5">
+          <div class="statCard">
+            <div class="statIcone"><i class="fa-solid fa-gear"></i></div>
+            <div class="statTexto">
+              <strong>Operações confiáveis</strong>
+              <span>Dados governados e rastreáveis</span>
+            </div>
+          </div>
+          <div class="statCard">
+            <div class="statIcone"><i class="fa-solid fa-bolt"></i></div>
+            <div class="statTexto">
+              <strong>Automação inteligente</strong>
+              <span>Menos retrabalho, mais resultado</span>
+            </div>
+          </div>
+          <div class="statCard">
+            <div class="statIcone"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="statTexto">
+              <strong>Software sustentável</strong>
+              <span>Simples, robusto e mantível</span>
+            </div>
+          </div>
         </div>
-    </main>
+      </div>
 
-    <footer class="rodape">
-        <div class="container rodapeLinha">
-            <div class="pequeno" id="textoRodape"></div>
-            <div class="pequeno">Portfólio institucional.</div>
+      <div class="heroiScroll" aria-hidden="true">
+        <div class="scrollIndicador"></div>
+      </div>
+    </section>
+
+    <!-- Soluções -->
+    <section class="secao" id="solucoes">
+      <div class="container">
+        <div class="secaoCabecalho revelar">
+          <div class="chip"><i class="fa-solid fa-layer-group"></i> O que entregamos</div>
+          <h2 class="secaoTitulo">Soluções <span class="gradiente">sob medida</span></h2>
+          <p class="secaoDescricao">Não fazemos tudo. Fazemos bem o que resolve problemas operacionais reais.</p>
         </div>
-    </footer>
+        <div class="gradeServicos" id="gradeServicos"></div>
+      </div>
+    </section>
 
-    <script src="./script.js"></script>
+    <!-- Como trabalhamos -->
+    <section class="secao secaoAlternada" id="como-trabalhamos">
+      <div class="container">
+        <div class="secaoCabecalho revelar">
+          <div class="chip"><i class="fa-solid fa-route"></i> Nosso processo</div>
+          <h2 class="secaoTitulo">Como <span class="gradiente">trabalhamos</span></h2>
+          <p class="secaoDescricao">Clareza, disciplina e foco no problema antes da tecnologia.</p>
+        </div>
+        <div class="gradeProcesso" id="gradeProcesso"></div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="secao secaoContato" id="contato">
+      <div class="container">
+        <div class="contatoGrid">
+          <div class="contatoTexto revelar">
+            <div class="chip"><i class="fa-solid fa-paper-plane"></i> Vamos conversar</div>
+            <h2 class="secaoTitulo">Pronto para <span class="gradiente">transformar</span> sua operação?</h2>
+            <p class="secaoDescricao">
+              Se sua empresa cresceu mais rápido do que sua organização interna, podemos ajudar a transformar caos em confiabilidade.
+            </p>
+          </div>
+          <div class="contatoCanais" id="contatoCanais"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodapeConteudo">
+      <div class="rodapeMarca">
+        <img src="./logo-dancode.png" alt="Logo" class="rodapeLogo" />
+        <span>Dancode Solutions LTDA</span>
+      </div>
+      <span class="rodapeTexto" id="rodapeAno"></span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 
 </html>
