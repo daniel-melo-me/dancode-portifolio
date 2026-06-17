@@ -4,8 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dancode Solutions | Portfólio</title>
-  <meta name="description" content="Dancode Solutions LTDA — Transformamos operações caóticas em sistemas confiáveis." />
+  <title>Dancode Solutions | Software para operações confiáveis</title>
+  <meta name="description" content="Dancode Solutions LTDA — Transformamos operações caóticas em sistemas confiáveis. Software corporativo, automação e governança de dados para empresas sérias. Porto Alegre, RS." />
+
+  <meta property="og:title" content="Dancode Solutions — Software para operações confiáveis" />
+  <meta property="og:description" content="Transformamos operações caóticas em sistemas confiáveis. Software corporativo, automação e governança de dados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="theme-color" content="#060d1a" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -38,14 +45,17 @@
         <a class="linkNav" href="#inicio">Início</a>
         <a class="linkNav" href="#solucoes">Soluções</a>
         <a class="linkNav" href="#como-trabalhamos">Como trabalhamos</a>
+        <a class="linkNav" href="#sobre">Sobre</a>
         <a class="linkNav" href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
+
+    <!-- ── Hero ─────────────────────────────── -->
     <section class="heroi" id="inicio">
+      <div class="heroDots" aria-hidden="true"></div>
       <div class="container heroiConteudo">
         <div class="heroiTexto">
           <div class="chip fadeUp atraso1">
@@ -98,7 +108,7 @@
       </div>
     </section>
 
-    <!-- Soluções -->
+    <!-- ── Soluções ───────────────────────── -->
     <section class="secao" id="solucoes">
       <div class="container">
         <div class="secaoCabecalho revelar">
@@ -110,7 +120,7 @@
       </div>
     </section>
 
-    <!-- Como trabalhamos -->
+    <!-- ── Como trabalhamos ───────────────── -->
     <section class="secao secaoAlternada" id="como-trabalhamos">
       <div class="container">
         <div class="secaoCabecalho revelar">
@@ -122,7 +132,14 @@
       </div>
     </section>
 
-    <!-- Contato -->
+    <!-- ── Sobre / Fundador ───────────────── -->
+    <section class="secao" id="sobre">
+      <div class="container">
+        <div id="sobreConteudo"></div>
+      </div>
+    </section>
+
+    <!-- ── Contato ────────────────────────── -->
     <section class="secao secaoContato" id="contato">
       <div class="container">
         <div class="contatoGrid">
@@ -137,15 +154,35 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="rodape">
-    <div class="container rodapeConteudo">
-      <div class="rodapeMarca">
-        <img src="./logo-dancode.png" alt="Logo" class="rodapeLogo" />
-        <span>Dancode Solutions LTDA</span>
+    <div class="container">
+      <div class="rodapeConteudo">
+        <div class="rodapeMarca">
+          <img src="./logo-dancode.png" alt="Dancode Solutions" class="rodapeLogo" />
+          <div>
+            <div class="rodapeNome">Dancode Solutions LTDA</div>
+            <div class="rodapeMeta">CNPJ 61.048.942/0001-34 · Porto Alegre, RS</div>
+          </div>
+        </div>
+        <div class="rodapeIcones">
+          <a href="mailto:dancodesolutions@gmail.com" class="rodapeIcone" aria-label="E-mail">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://wa.me/5551997955292" target="_blank" rel="noopener noreferrer" class="rodapeIcone" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/daniel--melo/" target="_blank" rel="noopener noreferrer" class="rodapeIcone" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
       </div>
-      <span class="rodapeTexto" id="rodapeAno"></span>
+      <div class="rodapeBase">
+        <span id="rodapeAno"></span>
+        <span>Portfólio institucional · Empresa ativa desde 2025</span>
+      </div>
     </div>
   </footer>
 
